@@ -1,0 +1,203 @@
+@font-face {
+  font-family: "heading font";
+  src: url(../Fonts/Pacifico-Regular.ttf);
+}
+@font-face {
+  font-family: "title font";
+  src: url(../Fonts/Righteous-Regular.ttf);
+}
+
+@font-face {
+  font-family: "main font";
+  src: url(../Fonts/PTSansCaption-Regular.ttf);
+}
+/* ===== Global Var and Classes ===== */
+:root {
+  --heading-font: "heading font";
+  --title-font: "title font";
+  --main-font: "main font";
+/*   --color-one: #162c38; */
+--color-one:black;
+  --color-two: #417972;
+  --color-three: #c1b2a4;
+  --color-four: #f5f2e5;
+  --color-five: #f2d381;
+}
+
+.f-heading {
+  font-family: var(--heading-font);
+}
+.f-title {
+  font-family: var(--title-font);
+}
+.f-main {
+  font-family: var(--main-font);
+}
+
+.f-primary-color {
+  color: var(--color-one);
+}
+.bg-primary-color {
+  background-color: var(--color-one);
+}
+
+.f-second-color {
+  color: var(--color-two);
+}
+.bg-second-color {
+  background-color: var(--color-two);
+}
+
+.f-third-color {
+  color: var(--color-three);
+}
+.bg-third-color {
+  background-color: var(--color-three);
+}
+
+.f-four-color {
+  color: var(--color-four);
+}
+.bg-four-color {
+  background-color: var(--color-four);
+}
+
+.f-five-color {
+  color: var(--color-five);
+}
+.bg-five-color {
+  background-color: var(--color-five);
+}
+
+/* ===== ================ ===== */
+
+body {
+  min-height: 100vh;
+  color: var(--color-four);
+  /* animation: Move 3s infinite; */
+  background-color: var(--color-one);
+}
+h1 {
+  margin: 60px 0;
+  font-size: 60px;
+  cursor: context-menu;
+}
+h1 span::after {
+  content: "";
+  width: 100%;
+  height: 60%;
+  background: url(../images/wave.png);
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  z-index: -50;
+  transition: all 0.5s;
+}
+h1 span:hover::after {
+  /* height: 61%; */
+  animation: move 10s infinite linear;
+}
+@keyframes move {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+
+h2 i {
+  color: var(--color-two);
+}
+/* ===== inputs and table ===== */
+.form + div button {
+  background-color: var(--color-two) !important;
+  padding: 8px 50px;
+  color: var(--color-four);
+  border: none;
+  border-radius: 10px;
+}
+.form input {
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.site:nth-child(odd) {
+  background-color: #f5f2e5;
+}
+.site:nth-child(even) {
+  background-color: #cdcabb;
+}
+
+th {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+td #visitBtn {
+  background-color: var(--color-two);
+  padding: 2px 15px;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+td #visitBtn:hover {
+  background-color: #2c5c56;
+}
+
+td #delBtn {
+  padding: 2px 15px;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+td #delBtn:hover {
+  background-color: #b62a38 !important;
+}
+/* =====  Validation  ===== */
+.form-control:focus {
+  outline: none;
+  border-color: #d99c39;
+  box-shadow: 0 0 0 0.25rem #fec26055;
+}
+/* ======= Alert Message ======= */
+.alert-window {
+  min-height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.alert-window .alert-message {
+  width: 600px;
+  height: 300px;
+  background-color: #eee;
+  border-radius: 20px;
+  color: var(--color-one);
+}
+/* ============== */
+@media (max-width: 640px) {
+  h2 {
+    font-size: 18px !important;
+    text-wrap: nowrap;
+  }
+
+  th {
+    font-size: 15px;
+  }
+  td #visitBtn {
+    padding: 2px 10px;
+  }
+
+  td #delBtn {
+    padding: 2px 10px;
+  }
+
+  td a,
+  td button {
+    text-wrap: nowrap !important;
+  }
+}
